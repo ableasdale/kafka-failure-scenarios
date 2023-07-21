@@ -3,7 +3,7 @@ version: '2'
 services:
 
   controller-1:
-    image: confluentinc/cp-kafka:${CP_TAG}
+    image: confluentinc/cp-server:${CP_TAG}
     hostname: controller-1
     container_name: controller-1
     ports:
@@ -24,13 +24,13 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-controller-logs'
       KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
       KAFKA_CONFLUENT_METRICS_ENABLE: 'false'
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:29092,broker-2:29094,broker-3:29095
+      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:9092,broker-2:9094,broker-3:9095
       # Replace CLUSTER_ID with a unique base64 UUID using "bin/kafka-storage.sh random-uuid"
       # See https://docs.confluent.io/kafka/operations-tools/kafka-tools.html#kafka-storage-sh
       CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
 
   controller-2:
-    image: confluentinc/cp-kafka:${CP_TAG}
+    image: confluentinc/cp-server:${CP_TAG}
     hostname: controller-2
     container_name: controller-2
     ports:
@@ -51,13 +51,13 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-controller-logs'
       KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
       KAFKA_CONFLUENT_METRICS_ENABLE: 'false'
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:29092,broker-2:29094,broker-3:29095
+      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:9092,broker-2:9094,broker-3:9095
       # Replace CLUSTER_ID with a unique base64 UUID using "bin/kafka-storage.sh random-uuid"
       # See https://docs.confluent.io/kafka/operations-tools/kafka-tools.html#kafka-storage-sh
       CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
 
   controller-3:
-    image: confluentinc/cp-kafka:${CP_TAG}
+    image: confluentinc/cp-server:${CP_TAG}
     hostname: controller-3
     container_name: controller-3
     ports:
@@ -78,13 +78,13 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-controller-logs'
       KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
       KAFKA_CONFLUENT_METRICS_ENABLE: 'false'
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:29092,broker-2:29094,broker-3:29095
+      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:9092,broker-2:9094,broker-3:9095
       # Replace CLUSTER_ID with a unique base64 UUID using "bin/kafka-storage.sh random-uuid"
       # See https://docs.confluent.io/kafka/operations-tools/kafka-tools.html#kafka-storage-sh
       CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
 
   broker-1:
-    image: confluentinc/cp-kafka:${CP_TAG}
+    image: confluentinc/cp-server:${CP_TAG}
     hostname: broker-1
     container_name: broker-1
     depends_on:
@@ -112,14 +112,14 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
       KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
       KAFKA_CONFLUENT_METRICS_ENABLE: 'false'
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:29092,broker-2:29094,broker-3:29095
+      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:9092,broker-2:9094,broker-3:9095
       # Replace CLUSTER_ID with a unique base64 UUID using "bin/kafka-storage.sh random-uuid"
       # See https://docs.confluent.io/kafka/operations-tools/kafka-tools.html#kafka-storage-sh
       CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
 
 
   broker-2:
-    image: confluentinc/cp-kafka:${CP_TAG}
+    image: confluentinc/cp-server:${CP_TAG}
     hostname: broker-2
     container_name: broker-2
     depends_on:
@@ -147,13 +147,13 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
       KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
       KAFKA_CONFLUENT_METRICS_ENABLE: 'false'
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:29092,broker-2:29094,broker-3:29095
+      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:9092,broker-2:9094,broker-3:9095
       # Replace CLUSTER_ID with a unique base64 UUID using "bin/kafka-storage.sh random-uuid"
       # See https://docs.confluent.io/kafka/operations-tools/kafka-tools.html#kafka-storage-sh
       CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
 
   broker-3:
-    image: confluentinc/cp-kafka:${CP_TAG}
+    image: confluentinc/cp-server:${CP_TAG}
     hostname: broker-3
     container_name: broker-3
     depends_on:
@@ -181,7 +181,7 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
       KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
       KAFKA_CONFLUENT_METRICS_ENABLE: 'false'
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:29092,broker-2:29094,broker-3:29095
+      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker-1:9092,broker-2:9094,broker-3:9095
       # Replace CLUSTER_ID with a unique base64 UUID using "bin/kafka-storage.sh random-uuid"
       # See https://docs.confluent.io/kafka/operations-tools/kafka-tools.html#kafka-storage-sh
       CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
